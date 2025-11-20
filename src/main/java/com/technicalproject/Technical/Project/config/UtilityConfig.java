@@ -13,6 +13,7 @@ public class UtilityConfig {
         return  new RestTemplate();
     }
 
+    @Bean
     public ModelMapper modelMapper(){
         return new ModelMapper();
     }
