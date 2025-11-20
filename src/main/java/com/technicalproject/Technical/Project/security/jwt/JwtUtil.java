@@ -14,7 +14,7 @@ import java.util.Date;
 
 @Component
 public class JwtUtil {
-    @Value("auth.token.jwtSecret")
+    @Value("${auth.token.jwtSecret}")
     private String jwtSecretKey;
 
     public String getUserNameFromToken(String token){

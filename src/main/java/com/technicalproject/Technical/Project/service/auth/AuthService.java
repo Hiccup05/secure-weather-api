@@ -31,7 +31,7 @@ public class AuthService {
             Authentication authentication = new UsernamePasswordAuthenticationToken(requestDto.getUserName(), requestDto.getPassword());
             Authentication authenticate = authenticationManager.authenticate(authentication);
             String token = jwtUtil.generateTokenFromUser(authenticate);
-            CustomUser principal = (CustomUser) authentication.getPrincipal();
+            CustomUser principal = (CustomUser) authenticate.getPrincipal();
             return new LoginResponseDto(principal.getId(), token);
         } catch (AuthenticationException e) {
             throw new RuntimeException(e);
