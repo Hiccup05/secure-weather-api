@@ -4,8 +4,8 @@ spring:
 
   datasource:
     url: jdbc:postgresql://localhost:5432/Technical
-    username: postgres
-    password: root
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -20,8 +20,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: 2crewmember10@gmail.com
-    password: yktj ipmw qbtg swnp
+    username: ${GMAIL}
+    password: ${APP_PASSWORD}
     properties:
       mail:
         smtp:
@@ -30,13 +30,14 @@ spring:
             enable: true
   redis:
     port: 6379
-    host: localhost
+    host: ${R_HOST}
+    password: ${R_PASS}
 
-WAPI: "https://api.weatherstack.com/current?access_key=KEY&query=location"
+WAPI: ${WAPI_KEY}
 
 
 api.prefix: /api/v1
 
 auth:
   token:
-    jwtSecret: G7K2Q9L1M5Z8X4C6P0B3R7T9H2Y5N8D1V4S0F6J3W7U9A2
+    jwtSecret: ${JWT_SECRET}
