@@ -33,6 +33,4 @@ build/
 .vscode/
 important
 
-E:\Java\Spring Projects\Technical-Project\src\main\resources\application-secret.properties
-
-.env
+src/main/resources/application-dev.yml
