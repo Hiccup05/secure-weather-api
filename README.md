@@ -114,8 +114,6 @@ spring.mail.properties.mail.smtp.starttls.enable=true
 spring.data.redis.host=localhost
 spring.data.redis.port=6379
 ```
-
-> ⚠️ Never commit credentials to version control.
 > Use environment variables for production.
 
 ---
@@ -157,14 +155,14 @@ spring.data.redis.port=6379
 
 ## 🧠 How Email Broadcasting Works
 
-1. Fetch cached user emails from Redis
+1. Fetch weather information from redis
 2. If cache exists → send emails directly
 3. If cache missing:
 
-   * Fetch users from database
+   * Fetch weather information from external api
    * Cache the result in Redis
    * Broadcast emails
-4. Weather broadcasts additionally fetch live weather data and append it to the message
+
 
 This design improves **performance and scalability** during bulk notifications.
 
